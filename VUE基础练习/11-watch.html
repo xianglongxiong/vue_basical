@@ -1,0 +1,54 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-14 16:25:54
+ * @LastEditTime: 2021-07-14 17:26:31
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \VUE基础练习\11-watch.html
+-->
+<!-- <!--
+ * @Author: your name
+ * @Date: 2021-07-14 16:25:54
+ * @LastEditTime: 2021-07-14 17:00:53
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \VUE基础练习\11-watch.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">   
+        <p>千米：<input type="text" v-model="kilometers"></p>
+        <p>米：<input type="text" v-model="meters"></p>
+        <p id="info"></p>
+    </div>
+    <script type = "text/javascript">
+        var vm=new Vue({
+            el:'#app',
+            data:{
+               kilometers:1,
+               meters:1000,
+            },     
+            watch:{
+                kilometers:function(val){
+                    this.kilometers=val
+                    this.meters=this.kilometers*1000
+                },
+                meters:function(val){
+                    this.kilometers=val/1000
+                    this.meters=val
+                }
+            },
+        })
+        vm.$watch('kilometers',function(newValue,oldValue){
+              document.getElementById('info').innerHTML="修改前值为："+oldValue+"千米, 现在值为："+newValue;
+        })
+        
+    </script>

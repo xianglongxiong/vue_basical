@@ -1,0 +1,54 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-15 16:03:30
+ * @LastEditTime: 2021-07-15 16:21:47
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \VUE基础练习\17嵌套路由命名视图.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue-router/4.0.10/vue-router.cjs.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Named  views</h1>
+        <ul>
+            <li><router-link to="/">/</router-link>></li>
+            <li><router-link to="/other">other</router-link></li>
+        </ul>
+        <router-view></router-view>
+        <router-view name="b"></router-view>
+        <router-view name="c"></router-view>
+    </div>
+    <script type="text/javascript">
+    const  Foo={template:'<h3>foo</h3>'},
+    const  Bar={template:'<h3>bar</h3>'},
+    const  Baz={template:'<h3>baz</h3>'},
+    
+   const router=new VueRouter({
+        mode:'history',
+        routes:[
+            {path:'/',components:{default:Foo,b:Bar,c:Baz}},
+            {path:'/other',components:{default:Bar,b:Baz,c:Foo}}
+        ]
+    })
+         var vm=new Vue({
+             el:'#app',
+             router,
+             data:{
+                 
+             },
+             methods:{
+                 
+             }
+         })
+    </script>
+</body>
+</html>

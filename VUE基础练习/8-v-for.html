@@ -1,0 +1,50 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-14 14:53:47
+ * @LastEditTime: 2021-07-14 15:22:37
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \VUE基础练习\8-v-for.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ol>
+            <template v-for="(site,index) in sites ">
+                <li>水果：{{site.name}} ,单价：{{site.price}} , 编码：{{site.code}}</li>
+                <span>-----{{index}}----</span>
+            </template>
+        </ol>
+        <ul>
+            <li v-for="(value,key)  in object">{{value}}--{{key}}--</li>
+        </ul>
+    </div>
+    <script>
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                sites:[
+                    {name:"apple",price:12,code:1},
+                    {name:"pineaple",price:3,code:2},
+                    {name:"watermelon",price:5,code:3},
+                ],
+                object:{
+                    name:'张山',
+                    age:22,
+                    sex:1,
+                    ID_address:'江西南昌',
+                    id_type:"曹县城镇户口",
+                },
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-15 16:23:23
+ * @LastEditTime: 2021-07-15 16:37:31
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \VUE基础练习\18路由.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue-router/4.0.10/vue-router.cjs.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        
+    </div>
+    <script type="text/javascript">
+    const  User={
+         props:['id'],
+         template:'<h1>{{id}}<h1>'
+    },
+    const router=new VueRouter({
+        routes:[
+            {path:'/user/:id',component:User,props:true},
+            {path:'user/:id',
+            component:{default:User,sidebar:Sidebar},
+            props:{default:true,sidebar:false},
+            },
+        ]
+    })
+         var vm=new Vue({
+             el:'#app',
+             data:{
+                 
+             },
+             methods:{
+                 
+             }
+         })
+    </script>
+</body>
+</html>

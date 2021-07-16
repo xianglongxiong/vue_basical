@@ -1,0 +1,33 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-14 10:21:02
+ * @LastEditTime: 2021-07-14 10:27:09
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \VUE基础练习\v-html.html
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+           <p  v-html="message">百度</p>
+    </div>
+    <script type="text/javascript">
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                message:'<a href="www.baidu.com">百度一下</a>',
+            }
+        })
+    </script>
+</body>
+</html>

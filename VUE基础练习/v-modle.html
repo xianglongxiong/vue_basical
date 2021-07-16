@@ -1,0 +1,45 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-14 11:22:19
+ * @LastEditTime: 2021-07-14 14:00:21
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \VUE基础练习\v-modle.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>双向绑定</h1>
+        <input type="text" v-model="value">
+        <input type="color" name="" id="">
+        <input type="radio" name="sex" id="" value="man">
+        <input type="radio" name="sex" id="" value="women">
+        <p>{{value}}</p>
+        <p>{{message}}</p>
+        <button v-on:click="reverse">反转string</button>
+        
+    </div>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            value:'1234',  
+            message:'string'  
+        },
+        methods:{
+            reverse: function(){
+                 this.value=this.value.split('').reverse().join('')  
+          }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-14 09:59:03
+ * @LastEditTime: 2021-07-14 10:12:56
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \VUE基础练习\vue起步.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+    <title>起步示例</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{name}}</h1>
+        <h2>{{site}}</h2>
+        <h3>{{functionname()}}</h3>
+    </div>
+<script type="text/javascript">
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            name:'熊熊',
+            site:'wwww.baidu.com',
+            alexa:'286834125',
+        },
+        methods:{
+            functionname: function(){
+                return this.site+'学的不仅是技术，更是梦想'
+            }
+        }
+    })
+</script>
+</body>
+</html>

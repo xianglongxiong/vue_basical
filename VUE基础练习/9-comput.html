@@ -1,0 +1,45 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-14 15:27:54
+ * @LastEditTime: 2021-07-14 15:40:54
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \VUE基础练习\9-comput.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p><input type="text" v-model="message"></p>
+        <p>{{message}}</p>
+        <p>{{reverseMessage}}</p>
+        <p>{{reverseMessage2()}}</p>
+    </div>
+    <script>
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                message:"string reverse"
+            },
+            computed:{
+                reverseMessage:function(){
+                     return this.message.split('').reverse().join("")  
+                },
+            },
+            methods:{
+                reverseMessage2:function(){
+                    return this.message.split('').reverse().join("")  
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-15 13:42:21
+ * @LastEditTime: 2021-07-15 14:37:30
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \VUE基础练习\16-自定义事件.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <span>{{total}}</span>
+        <p>
+            <increase-btn v-on:increment="increaseTotal"></increase-btn>
+            <increase-btn v-on:increment="increaseTotal"></increase-btn>
+        </p>
+    </div>
+    <script type="text/javascript">
+        Vue.component('increaseBtn',{
+            template:'<button v-on:click="increaseHandle">点击了{{counter}}次</button>',
+            data:function(){
+              return {
+                  counter:0
+              }  
+            },
+            methods:{
+                increaseHandle:function(){
+                    this.counter+=1,
+                    this.$emit('increment')
+                }
+             },
+        })
+        var vm=new Vue({
+             el:'#app',
+             components:{
+                
+             },
+             data:{
+                 total:0,
+             },
+             methods:{
+                increaseTotal:function(){
+                    this.total+=1
+                }
+             }
+         })
+    </script>
+</body>
+</html>

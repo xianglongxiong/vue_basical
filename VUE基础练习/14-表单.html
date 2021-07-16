@@ -1,0 +1,77 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-15 10:23:27
+ * @LastEditTime: 2021-07-15 11:04:09
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \VUE基础练习\14-复选框.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>输入框：
+            <input type="text" v-model='input' placeholder="input 输入框"> <span>{{input}}</span>
+        </p>
+        <p>输入框：
+            <textarea type="text" v-model='textarea' placeholder="textarea 文本域输入框" ></textarea> <span>{{textarea}}</span>
+        </p>
+        <div>复选框：
+            <input type="checkbox" name="" id="" v-model="singlecheckbox">  <span>{{singlecheckbox}}</span>
+            <p>
+                多个复选框：
+                <input type="checkbox" value="天猫11" id="tmall" v-model="checkboxss">
+                <label for="tmall">天猫</label>
+                <input type="checkbox" value="京东11" id="jdong" v-model="checkboxss">
+                <label for="tmall">京东</label>
+                <input type="checkbox" value="拼夕夕11" id="pxx" v-model="checkboxss">
+                <label for="tmall">拼夕夕</label>
+                <span>{{checkboxss}}</span>
+            </p>
+        </div>
+        <p>
+            单选按钮：
+            <input type="radio" name="sex" id="man" v-model='sex' value="男">
+            <label for="man">男</label>
+            <input type="radio" name="sex" id="women" v-model='sex' value="女">
+            <label for="women">女</label>
+            <span>{{sex}}</span>
+        </p>
+        <p>
+           select下拉选择：
+            <select name="type" id="" v-model="option">
+                <option value="">选择职业</option>
+                <option value="桶事长122">桶事长</option>
+                <option value="公司高管">公司高管</option>
+                <option value="部门经理">部门经理</option>
+                <option value="普通职员">普通职员</option>
+            </select>
+            <div>{{option}}</div>
+        </p>
+    </div>
+    <script type="text/javascript">
+         var vm=new Vue({
+             el:'#app',
+             data:{
+               input:'', 
+               textarea:'', 
+               singlecheckbox:false,
+               checkboxss:[],
+               sex:'',
+               option:'',
+             },
+             methods:{
+                 
+             }
+         })
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-14 11:11:21
+ * @LastEditTime: 2021-07-14 14:40:50
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \VUE基础练习\v-if.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+   <div id="app">
+       <h1 v-if="seen">现在你可以看到我</h1>
+       <template v-if="act">
+            <a  :href="url">百度一下</a>
+            <p>我是谁，我会拥有怎样的未来</p>
+       </template>
+       <button v-on:click="display">模板展示</button>
+       <p v-if="random>0.5">大于0.5展示我</p>
+       <p v-else>小于0.5展示我</p>
+   </div> 
+<script type="text/javascript">
+     var vm=new Vue({
+         el:'#app',
+         data:{
+            url:'www.baidu.com',
+            seen:true,
+            act:false,
+            random:Math.random(),
+        },
+        methods:{
+            display:function(){
+                this.act=!this.act
+                console.log(this.act)
+                this.random=Math.random()
+                console.log(this.random)
+            }
+            
+        }
+    })
+</script>
+</body>
+</html>

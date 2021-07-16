@@ -1,0 +1,48 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-14 10:30:54
+ * @LastEditTime: 2021-07-14 11:07:17
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \VUE基础练习\v-bind.html
+-->
+<!-- <!--
+ * @Author: your name
+ * @Date: 2021-07-14 10:30:54
+ * @LastEditTime: 2021-07-14 10:43:20
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \VUE基础练习\v-bind.html
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <label for="id">改变颜色</label><input @click=name() type="checkbox" v-model="use" id="id">
+        <div v-bind:class="{'class1':use}">v-bind:class指令</div>
+    </div>
+<script type=text/javascript>
+   var vm=new Vue({
+        el: '#app',
+        data:{
+            use: true,
+        },
+   })
+</script>
+<style>
+    .class1{
+        background: #000;
+        color: blue;
+    }
+</style>
+</body>
+</html> 
